@@ -14,9 +14,6 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    logger.debug "New article: #{@article.attributes.inspect}"
-    logger.debug "Article should be valid: #{@article.valid?}"
-
     if @article.save
       redirect_to @article
     else
